@@ -15,6 +15,7 @@ class CreateCategoryTable extends Migration
     {
         Schema::create('category', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('main_id')->nullable()->constrained('category')->onDelete('cascade');
             $table->string('name')->unique();
             $table->tinyInteger('rank')->unsigned()->default(1);
             $table->timestamps();
