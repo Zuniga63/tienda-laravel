@@ -14,10 +14,8 @@ class CreateItemHasCategoryTable extends Migration
     public function up()
     {
         Schema::create('item_has_category', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('item_id')->constrained('item')->onDelete('cascade');
             $table->foreignId('category_id')->constrained('category')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

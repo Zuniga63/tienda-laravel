@@ -14,10 +14,8 @@ class CreateItemHasTagTable extends Migration
     public function up()
     {
         Schema::create('item_has_tag', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('item_id')->constrained('item')->onDelete('cascade');
             $table->foreignId('tag_id')->constrained('tag')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 
