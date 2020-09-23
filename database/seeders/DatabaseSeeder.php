@@ -16,9 +16,11 @@ class DatabaseSeeder extends Seeder
 	{
 		$tables = [
 			"tag",
+			"category",
 		];
 		$this->truncate_tables($tables);
 		$this->call(TagTableSeeder::class);
+		$this->call(CategoryTableSeeder::class);
 		// \App\Models\User::factory(10)->create();
 	}
 
