@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\StartController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [StartController::class, 'index' ]);
+Route::get('/', [StartController::class, 'index'])->name('dashboard');
+Route::group(['prefix' => 'admin'], function () {
+  Route::get('permiso', [PermissionController::class, 'index'])->name('permission');
+});
