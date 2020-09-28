@@ -55,6 +55,7 @@
   <script src="{{asset("assets/$theme/plugins/jquery-validation/jquery.validate.min.js")}}"></script>
   <script src="{{asset("assets/$theme/plugins/jquery-validation/localization/messages_es.min.js")}}"></script>
   <script src="{{asset("assets/js/generalValidations.js")}}"></script>
+  @yield('scriptPlugins')
   @yield('scripts')
 </body>
 

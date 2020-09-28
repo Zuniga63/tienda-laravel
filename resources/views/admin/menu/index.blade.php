@@ -4,6 +4,18 @@
 Menus
 @endsection
 
+@section('styles')
+<link rel="stylesheet" href="{{asset("assets/js/jquery-nestable/jquery.nestable.css")}}">
+@endsection
+
+@section('scriptPlugins')
+<script src="{{asset("assets/js/jquery-nestable/jquery.nestable.js")}}"></script>
+@endsection
+
+@section('scripts')
+<script src="{{asset("assets/pages/scripts/admin/menu/index.js")}}"></script>
+@endsection
+
 @section('contentHeader')
 <div class="container-fluid">
   <div class="row mb-2">
@@ -21,5 +33,13 @@ Menus
 @endsection
 
 @section('content')
-
+@include('includes.message')
+@csrf
+<div class="dd" id="nestable">
+  <ol class="dd-list">
+    @foreach ($menus as $key => $item)
+    @include('admin.menu.menu-item', ["item" => $item])
+    @endforeach
+  </ol>
+</div>
 @endsection
