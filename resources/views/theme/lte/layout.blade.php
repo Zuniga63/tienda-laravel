@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/adminlte.min.css")}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Estilos personalizados -->
+  @yield('styles')
+  <link rel="stylesheet" href="{{asset("assets/css/customs.css")}}">
 </head>
 
 <body class="hold-transition sidebar-mini layout-navbar-fixed">
@@ -48,6 +51,11 @@
   <script src="{{asset("assets/$theme/dist/js/adminlte.js")}}"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset("assets/$theme/dist/js/demo.js")}}"></script>
+  <!-- Plugin of jQuery-validations -->
+  <script src="{{asset("assets/$theme/plugins/jquery-validation/jquery.validate.min.js")}}"></script>
+  <script src="{{asset("assets/$theme/plugins/jquery-validation/localization/messages_es.min.js")}}"></script>
+  <script src="{{asset("assets/js/generalValidations.js")}}"></script>
+  @yield('scripts')
 </body>
 
 </html>

@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\StartController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [StartController::class, 'index'])->name('dashboard');
 Route::group(['prefix' => 'admin'], function () {
+  // ---------------------------------------------------
+  // Rutas para la gestion de los permisos
+  // ---------------------------------------------------
   Route::get('permiso', [PermissionController::class, 'index'])->name('permission');
+  // ---------------------------------------------------
+  // Rutas para la gestion de los menus
+  // ---------------------------------------------------
+  Route::get('menu', [MenuController::class, 'index'])->name('menu');
+  Route::get('menu/crear', [MenuController::class, 'create'])->name('create_menu');
+  Route::Post('menu/guardar-orden', [MenuController::class, 'store'])->name('store_menu');
 });

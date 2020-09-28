@@ -1,0 +1,8 @@
+/* 
+  Regla para agregar un asterisco rojo 
+  delante de un campo obligatorio
+*/
+.required:after{
+  content: " *";
+  color: #e73d4a;
+}
