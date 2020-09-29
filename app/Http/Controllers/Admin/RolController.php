@@ -61,7 +61,12 @@ class RolController extends Controller
    */
   public function edit($id)
   {
-    //
+    /**
+     * El metodo find or fail de laravel busca un elemento
+     * pero si no lo encuentra falla y me genera un 404
+     */
+    $data = Rol::findOrFail($id);
+    return view('admin.rol.edit', compact('data'));
   }
 
   /**
@@ -71,9 +76,10 @@ class RolController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id)
+  public function update(RolValidation $request, $id)
   {
-    //
+    Rol::findOrFail($id)->update($request->all());
+    return redirect(route('rol'))->with('message', 'Rol actualizado con exito');
   }
 
   /**

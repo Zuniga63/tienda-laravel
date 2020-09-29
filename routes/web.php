@@ -36,4 +36,6 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('rol', [RolController::class, 'index'])->name('rol');
   Route::get('rol/crear', [RolController::class, 'create'])->name('create_rol');
   Route::post('rol', [RolController::class, 'store'])->name('store_rol');
+  Route::get('rol/{id}/editar', [RolController::class, 'edit'])->name('edit_rol');
+  Route::put('rol/{id}', [RolController::class, 'update'])->name('update_rol');
 });

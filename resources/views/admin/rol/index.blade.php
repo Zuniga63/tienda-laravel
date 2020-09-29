@@ -56,7 +56,7 @@ Roles
                     title="Editar este registro">
                     <i class="fas fa-pencil-alt"></i>
                   </a>
-                  <form action="{{url("admin/rol/$data->id")}}" class="d-inline form-delete">
+                  <form action="{{route('edit_rol', ['id' => $data->id])}}" class="d-inline form-delete">
                     @csrf @method('delete')
                     <button type="submit" class="btn-action-table delete tooltipsC" title="Eliminar registro">
                       <i class="fas fa-trash text-danger"></i>
