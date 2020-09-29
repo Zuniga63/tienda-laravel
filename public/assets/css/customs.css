@@ -6,3 +6,17 @@
   content: " *";
   color: #e73d4a;
 }
+
+.btn-action-table{
+  cursor: pointer;
+  border: none;
+  background: 0;
+  padding: 0 0 0 5px;
+  font-size: 14px !important;
+  line-height: 1.5;
+  /* opacity: 1; */
+}
+
+.width70{
+  width: 70px !important;
+}

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\RolController;
 use App\Http\Controllers\StartController;
 
 /*
@@ -29,4 +30,10 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('menu/crear', [MenuController::class, 'create'])->name('create_menu');
   Route::post('menu', [MenuController::class, 'store'])->name('store_menu');
   Route::post('menu/guardar-orden', [MenuController::class, 'saveOrder'])->name('save_order');
+  // ---------------------------------------------------
+  // Rutas para la gestion de los roles
+  // ---------------------------------------------------
+  Route::get('rol', [RolController::class, 'index'])->name('rol');
+  Route::get('rol/crear', [RolController::class, 'create'])->name('create_rol');
+  Route::post('rol', [RolController::class, 'store'])->name('store_rol');
 });
