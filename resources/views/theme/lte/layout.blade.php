@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/adminlte.min.css")}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   <!-- Estilos personalizados -->
   @yield('styles')
   <link rel="stylesheet" href="{{asset("assets/css/customs.css")}}">
@@ -55,6 +57,11 @@
   <!-- Plugin of jQuery-validations -->
   <script src="{{asset("assets/$theme/plugins/jquery-validation/jquery.validate.min.js")}}"></script>
   <script src="{{asset("assets/$theme/plugins/jquery-validation/localization/messages_es.min.js")}}"></script>
+  <!-- Sweet alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- toastr -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
   <script src="{{asset("assets/js/generalValidations.js")}}"></script>
   <script src="{{asset("assets/js/scripts.js")}}"></script>
 

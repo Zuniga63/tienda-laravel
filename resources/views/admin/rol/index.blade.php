@@ -6,6 +6,7 @@ Roles
 
 @section('scripts')
 <script src="{{asset("assets/pages/scripts/admin/create.js")}}"></script>
+<script src="{{asset("assets/pages/scripts/admin/index.js")}}"></script>
 @endsection
 
 
@@ -52,11 +53,11 @@ Roles
               <tr>
                 <td>{{$data->name}}</td>
                 <td>
-                  <a href="{{url("admin/rol/$data->id/editar")}}" class="btn-action-table tooltipsC"
+                  <a href="{{route('edit_rol', ['id' => $data->id])}}" class="btn-action-table tooltipsC"
                     title="Editar este registro">
                     <i class="fas fa-pencil-alt"></i>
                   </a>
-                  <form action="{{route('edit_rol', ['id' => $data->id])}}" class="d-inline form-delete">
+                  <form action="{{route('delete_rol', ['id' => $data->id])}}" class="d-inline form-delete">
                     @csrf @method('delete')
                     <button type="submit" class="btn-action-table delete tooltipsC" title="Eliminar registro">
                       <i class="fas fa-trash text-danger"></i>

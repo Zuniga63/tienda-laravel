@@ -14,6 +14,11 @@ class Menu extends Model
   protected $fillable = ['name', 'url', 'icon'];
   protected $guarded = ['id'];
 
+  public function roles()
+  {
+    return $this-> belongsToMany(Rol::class, 'rol_has_menu');
+  }
+
   /**
    * Este metodo se encarga de seleccionar solo aquellas
    * tuplas que no tiene asignada un padre y retorna un array

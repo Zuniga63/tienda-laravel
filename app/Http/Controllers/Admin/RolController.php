@@ -88,8 +88,16 @@ class RolController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function destroy($id)
+  public function destroy(Request $reques, $id)
   {
-    //
+    if ($reques->ajax()) {
+      if(Rol::destroy($id)){
+        return response()->json(['message' => "ok"]);
+      }else{
+        return response()->json(['message' => "ng"]);
+      }
+    }else{
+      abort(404);
+    }
   }
 }
